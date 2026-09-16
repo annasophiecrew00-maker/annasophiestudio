@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anna Sophie Studio — Professional Dance Videos for All Artists</title>
+<meta name="description" content="Anna Sophie Studio — Professional choreographed dance videos for musicians, brands, and creators worldwide. Promo packages on Instagram & TikTok with full tagging & collaborator access." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #000;
+    color: #f5f0e8;
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; }
+  ::selection { background: #c9a961; color: #000; }
+
+  :root {
+    --gold: #c9a961;
+    --gold-light: #e0c989;
+    --gold-dark: #8a7340;
+    --bg: #050505;
+    --bg-elevated: #0d0a06;
+    --border: rgba(201, 169, 97, 0.2);
+    --text: #f5f0e8;
+    --text-muted: #a09684;
+  }
+
+  /* ============ PROFESSIONAL ANIMATED BACKGROUND ============ */
+  .bg-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(201, 169, 97, 0.18), transparent 50%),
+      radial-gradient(ellipse 70% 50% at 85% 80%, rgba(180, 130, 70, 0.15), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 50% 50%, rgba(40, 25, 10, 0.6), transparent 70%),
+      linear-gradient(180deg, #0a0604 0%, #050302 50%, #0a0604 100%);
+  }
+  .bg-canvas::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(2px 2px at 20% 30%, rgba(201, 169, 97, 0.6), transparent),
+      radial-gradient(1px 1px at 60% 70%, rgba(201, 169, 97, 0.4), transparent),
+      radial-gradient(1.5px 1.5px at 80% 20%, rgba(201, 169, 97, 0.5), transparent),
+      radial-gradient(1px 1px at 30% 80%, rgba(201, 169, 97, 0.3), transparent),
+      radial-gradient(1px 1px at 90% 50%, rgba(201, 169, 97, 0.4), transparent),
+      radial-gradient(1.5px 1.5px at 10% 60%, rgba(201, 169, 97, 0.3), transparent);
+    background-size: 400px 400px;
+    animation: drift 40s linear infinite;
+    opacity: 0.7;
+  }
+  .bg-canvas::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201, 169, 97, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201, 169, 97, 0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 80% 60% at center, black, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at center, black, transparent 80%);
+  }
+  @keyframes drift {
+    from { background-position: 0 0; }
+    to { background-position: 400px 400px; }
+  }
+  .bg-vignette {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(ellipse 100% 80% at center, transparent 30%, rgba(0,0,0,0.7) 100%);
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(5, 5, 5, 0.7);
+    border-bottom: 1px solid var(--border);
+  }
+  .logo { display: flex; align-items: center; }
+  .logo-img { height: 60px; width: auto; filter: drop-shadow(0 0 14px rgba(201, 169, 97, 0.4)); }
+  .nav-links { display: flex; gap: 2.25rem; align-items: center; }
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color 0.3s;
+    position: relative;
+  }
+  .nav-links a:not(.nav-cta)::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0; right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  .nav-links a:not(.nav-cta):hover { color: var(--gold); }
+  .nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); }
+  .nav-cta {
+    background: transparent !important;
+    color: var(--gold) !important;
+    padding: 0.75rem 1.6rem;
+    border: 1px solid var(--gold);
+    border-radius: 0;
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    transition: all 0.3s;
+  }
+  .nav-cta:hover { background: var(--gold) !important; color: #000 !important; }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 8rem 2rem 4rem;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+  }
+  .hero-logo {
+    width: clamp(200px, 32vw, 340px);
+    margin: 0 auto 3rem;
+    filter: drop-shadow(0 0 35px rgba(201, 169, 97, 0.5));
+    animation: floatSlow 6s ease-in-out infinite;
+  }
+  @keyframes floatSlow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  .hero-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .ornament-line {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .ornament-diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    box-shadow: 0 0 12px var(--gold);
+  }
+  .hero-tag {
+    font-size: 0.85rem;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .hero p {
+    font-size: clamp(1rem, 1.3vw, 1.15rem);
+    color: var(--text-muted);
+    max-width: 640px;
+    margin: 0 auto 3rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+  .hero-buttons { display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    padding: 1.1rem 2.5rem;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: #000;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(201, 169, 97, 0.35); }
+  .btn-secondary {
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+    color: var(--text);
+    border: 1px solid rgba(201, 169, 97, 0.3);
+  }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); background: rgba(201, 169, 97, 0.05); }
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s infinite;
+  }
+  @keyframes scrollPulse {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform: scaleY(1); transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ============ SECTIONS ============ */
+  section { padding: 7rem 2rem; position: relative; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 5rem; }
+  .section-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-tag {
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    color: var(--text);
+  }
+  h2 em { font-style: italic; color: var(--gold); }
+
+  /* ============ PRICING ============ */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .pricing-card {
+    padding: 3rem 2rem;
+    background: rgba(13, 10, 6, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    transition: all 0.4s;
+    position: relative;
+    text-align: center;
+  }
+  .pricing-card::before,
+  .pricing-card::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--gold);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .pricing-card::before { top: 8px; left: 8px; border-right: 0; border-bottom: 0; }
+  .pricing-card::after { bottom: 8px; right: 8px; border-left: 0; border-top: 0; }
+  .pricing-card:hover { transform: translateY(-6px); border-color: rgba(201, 169, 97, 0.5); background: rgba(13, 10, 6, 0.8); }
+  .pricing-card:hover::before,
+  .pricing-card:hover::after { opacity: 1; }
+  .pricing-card.featured {
+    border-color: var(--gold);
+    background: linear-gradient(180deg, rgba(13, 10, 6, 0.8) 0%, rgba(201, 169, 97, 0.08) 100%);
+  }
+  .pricing-card.featured::before,
+  .pricing-card.featured::after { opacity: 1; }
+  .featured-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: #000;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+  }
+  .pricing-duration {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  .pricing-icon {
+    width: 64px; height: 64px;
+    margin: 0 auto 1.5rem;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: var(--gold);
+  }
+  .pricing-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .pricing-amount sup {
+    font-size: 1.5rem;
+    vertical-align: super;
+    color: var(--gold);
+  }
+  .pricing-amount small {
+    font-size: 1rem;
+    vertical-align: super;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    margin-left: 0.25rem;
+    font-weight: 400;
+  }
+  .pricing-features {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  .pricing-features li {
+    padding: 0.6rem 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .pricing-features li::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  .pricing-features li strong { color: var(--text); font-weight: 500; }
+  .pricing-card .btn { width: 100%; justify-content: center; }
+
+  /* ============ PORTFOLIO ============ */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .portfolio-card {
+    background: rgba(13, 10, 6, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: all 0.4s;
+    position: relative;
+  }
+  .portfolio-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .portfolio-thumb {
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+  }
+  .portfolio-thumb video {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #000;
+  }
+  .video-link {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .video-link video {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+  }
+  .play-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.2);
+    transition: background 0.3s;
+    pointer-events: none;
+  }
+  .play-button {
+    width: 70px; height: 70px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 1.75rem;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+  }
+  .video-link:hover .play-button {
+    background: var(--gold);
+    color: #000;
+    transform: scale(1.1);
+  }
+  .video-link:hover .play-overlay {
+    background: rgba(0,0,0,0.3);
+  }
+  .portfolio-thumb-icon {
+    width: 70px; height: 70px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 1.75rem;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+  }
+  .portfolio-card:hover .portfolio-thumb-icon {
+    background: var(--gold);
+    color: #000;
+    transform: scale(1.1);
+  }
+  .portfolio-info { padding: 1.75rem; }
+  .portfolio-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .portfolio-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+  .portfolio-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  .portfolio-tag {
+    padding: 0.3rem 0.8rem;
+    background: rgba(201, 169, 97, 0.1);
+    border: 1px solid var(--border);
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ============ ABOUT ============ */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-image-frame {
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.2), rgba(138, 115, 64, 0.1));
+    position: relative;
+    border: 1px solid var(--gold);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .about-image-placeholder {
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+    padding: 2rem;
+    letter-spacing: 0.05em;
+  }
+  .about-image-placeholder::before {
+    content: '✦';
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-style: normal;
+  }
+  .about-text h2 { margin-bottom: 2rem; text-align: left; }
+  .about-text p {
+    color: var(--text-muted);
+    font-size: 1.02rem;
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+  }
+  .about-text p strong { color: var(--gold); font-weight: 500; }
+  .credentials {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+  .credential {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: rgba(13, 10, 6, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+  .credential-icon {
+    width: 36px; height: 36px;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* ============ HOW IT WORKS ============ */
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    counter-reset: step;
+  }
+  .process-step {
+    padding: 2.5rem 1.25rem;
+    background: rgba(13, 10, 6, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    text-align: center;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .process-step:hover { border-color: var(--gold); }
+  .process-step::before {
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 1rem;
+    display: block;
+    font-style: italic;
+  }
+  .process-step h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+  .process-step p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+  .process-step.highlight {
+    border-color: var(--gold);
+    background: linear-gradient(180deg, rgba(13, 10, 6, 0.8) 0%, rgba(201, 169, 97, 0.08) 100%);
+  }
+  .process-step.highlight::after {
+    content: '★';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: var(--gold);
+    font-size: 0.9rem;
+  }
+
+  /* ============ CONTACT ============ */
+  .contact-cta {
+    padding: 5rem 3rem;
+    background: rgba(13, 10, 6, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--gold);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(201, 169, 97, 0.1), transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(201, 169, 97, 0.1), transparent 50%);
+  }
+  .contact-cta > * { position: relative; z-index: 1; }
+  .contact-cta h2 { margin-bottom: 1rem; }
+  .contact-cta p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+  }
+  .contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .contact-method {
+    padding: 0.9rem 1.5rem;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .contact-method:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  .contact-method svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+  /* ============ FOOTER ============ */
+  footer {
+    padding: 4rem 2rem 2.5rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    background: rgba(5, 5, 5, 0.6);
+  }
+  .footer-logo { width: 110px; margin: 0 auto 2rem; opacity: 0.85; }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  .social-link {
+    width: 54px; height: 54px;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    background: rgba(13, 10, 6, 0.6);
+    backdrop-filter: blur(10px);
+  }
+  .social-link:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
+  .social-link svg { width: 22px; height: 22px; }
+  .social-link.email-link {
+    border-color: rgba(201, 169, 97, 0.4);
+    background: rgba(201, 169, 97, 0.05);
+  }
+  .social-link.email-link:hover {
+    background: var(--gold);
+    color: #000;
+  }
+  .footer-text {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .footer-text span { color: var(--gold); }
+
+  /* ============ FAQ ============ */
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 850px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    padding: 2rem 2.5rem;
+    background: rgba(13, 10, 6, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    transition: all 0.3s;
+  }
+  .faq-item:hover {
+    border-color: rgba(201, 169, 97, 0.4);
+    transform: translateX(4px);
+  }
+  .faq-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .faq-item p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+  .footer-email {
+    color: var(--gold);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    display: inline-block;
+    padding: 0.85rem 1.75rem;
+    border: 1px solid var(--gold);
+    background: rgba(201, 169, 97, 0.08);
+    transition: all 0.3s;
+  }
+  .footer-email:hover {
+    background: rgba(201, 169, 97, 0.18);
+    transform: translateY(-2px);
+  }
+  .footer-email a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s;
+    border-bottom: 1px solid transparent;
+  }
+  .footer-email a:hover {
+    color: var(--gold-light);
+    border-bottom: 1px solid var(--gold-light);
+  }
+
+  @media (max-width: 1024px) {
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .hero-buttons { flex-direction: column; align-items: stretch; }
+    .btn { justify-content: center; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .process-grid { grid-template-columns: 1fr; }
+    .credentials { grid-template-columns: 1fr; }
+    section { padding: 5rem 1.25rem; }
+    .contact-cta { padding: 3rem 1.5rem; }
+    .pricing-amount { font-size: 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ ANIMATED BACKGROUND ============ -->
+<div class="bg-canvas"></div>
+<div class="bg-vignette"></div>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <div class="logo">
+    <img src="logo.png" alt="Anna Sophie Studio" class="logo-img" />
+  </div>
+  <div class="nav-links">
+    <a href="#packages">Packages</a>
+    <a href="#work">Portfolio</a>
+    <a href="#about">About</a>
+    <a href="#process">How It Works</a>
+    <a href="/cdn-cgi/l/email-protection#77161919160418071f1e121405120037101a161e1b5914181a" class="nav-cta">Book Now</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-content">
+    <img src="logo.png" alt="Anna Sophie Studio" class="hero-logo" />
+    <div class="hero-ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-diamond"></div>
+      <div class="ornament-line"></div>
+    </div>
+    <div class="hero-tag">Professional Dance Videos for Every Artist</div>
+    <h1>Let's get your <em>music</em> moving.</h1>
+    <p>Choreographed dance videos for musicians, brands, and creators of every genre. Posted on Instagram and TikTok. You get tagged and added as collaborator so your audience grows alongside mine.</p>
+    <div class="hero-buttons">
+      <a href="#packages" class="btn btn-primary">View Packages</a>
+      <a href="https://www.fiverr.com/alina_rose01/create-a-group-tiktok-dance-choreography-video-dance-video-viral-dance" target="_blank" rel="noopener" class="btn btn-secondary">Send Inquiry</a>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>Explore</span>
+    <div class="scroll-line"></div>
+  </div>
+</header>
+
+<!-- ============ PRICING ============ -->
+<section id="packages">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-ornament">
+        <div class="ornament-line"></div>
+        <span class="section-tag">Dance Video Packages</span>
+        <div class="ornament-line"></div>
+      </div>
+      <h2>Choose your <em>package</em></h2>
+    </div>
+    <div class="pricing-grid">
+
+      <!-- 15 Seconds -->
+      <div class="pricing-card">
+        <div class="pricing-duration">15 Seconds</div>
+        <div class="pricing-icon">▶</div>
+        <div class="pricing-amount"><sup>$</sup>100</div>
+        <ul class="pricing-features">
+          <li>Short and punchy for fast scrollers</li>
+          <li><strong>Posted on Instagram and TikTok</strong></li>
+          <li>You will be <strong>tagged</strong></li>
+          <li>You will be <strong>added as collaborator</strong></li>
+        </ul>
+        <a href="/cdn-cgi/l/email-protection#5e3f30303f2d312e36373b3d2c3b291e39333f3732703d3133612d2b3c343b3d2a636f6b7b6c6e0d3b3d31303a7b6c6e0e3f3d353f393b7b6c6e17302f2b372c27" class="btn btn-secondary">Order This Package</a>
+      </div>
+
+      <!-- 30 Seconds -->
+      <div class="pricing-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <div class="pricing-duration">30 Seconds</div>
+        <div class="pricing-icon">▶</div>
+        <div class="pricing-amount"><sup>$</sup>150</div>
+        <ul class="pricing-features">
+          <li>Room for a hook, story and climax</li>
+          <li><strong>Posted on Instagram and TikTok</strong></li>
+          <li>You will be <strong>tagged</strong></li>
+          <li>You will be <strong>added as collaborator</strong></li>
+        </ul>
+        <a href="/cdn-cgi/l/email-protection#17767979766478677f7e727465726057707a767e7b3974787a286462757d7274632a24273225274472747879733225274776747c7670723225275e7966627e656e" class="btn btn-primary">Order This Package</a>
+      </div>
+
+      <!-- 1 Minute -->
+      <div class="pricing-card">
+        <div class="pricing-duration">1 Minute</div>
+        <div class="pricing-icon">▶</div>
+        <div class="pricing-amount"><sup>$</sup>300</div>
+        <ul class="pricing-features">
+          <li>Full choreography and cinematic feel</li>
+          <li><strong>Posted on Instagram and TikTok</strong></li>
+          <li>You will be <strong>tagged</strong></li>
+          <li>You will be <strong>added as collaborator</strong></li>
+        </ul>
+        <a href="/cdn-cgi/l/email-protection#cfaea1a1aebca0bfa7a6aaacbdaab88fa8a2aea6a3e1aca0a2f0bcbaada5aaacbbf2feeafdff82a6a1babbaaeafdff9faeaca4aea8aaeafdff86a1bebaa6bdb6" class="btn btn-secondary">Order This Package</a>
+      </div>
+
+      <!-- Full Song -->
+      <div class="pricing-card">
+        <div class="pricing-duration">Full Song</div>
+        <div class="pricing-icon">♫</div>
+        <div class="pricing-amount"><sup>#</sup>500<small>+</small></div>
+        <ul class="pricing-features">
+          <li>Complete choreography for the entire song</li>
+          <li>Price depends on song length and complexity</li>
+          <li><strong>Posted on Instagram and TikTok</strong></li>
+          <li>You will be <strong>tagged</strong></li>
+          <li>You will be <strong>added as collaborator</strong></li>
+        </ul>
+        <a href="/cdn-cgi/l/email-protection#81e0efefe0f2eef1e9e8e4e2f3e4f6c1e6ece0e8edafe2eeecbef2f4e3ebe4e2f5bcc7f4ededa4b3b1d2eeefe6a4b3b1d1e0e2eae0e6e4a4b3b1c8eff0f4e8f3f8" class="btn btn-secondary">Request a Quote</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section id="work">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-ornament">
+        <div class="ornament-line"></div>
+        <span class="section-tag">Selected Work</span>
+        <div class="ornament-line"></div>
+      </div>
+      <h2>Recent <em>collaborations</em></h2>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div class="portfolio-thumb">
+          <iframe src="https://www.tiktok.com/embed/v2/7596904607440194834" style="width:100%;height:100%;border:none;" allowfullscreen scrolling="no"></iframe>
+        </div>
+        <div class="portfolio-info">
+          <h3>Dance Promo Reel</h3>
+          <p>Amazing dance choreography — DM to book a dance video for your music. Every detail crafted to match your sound and vision.</p>
+          <div class="portfolio-meta">
+            <span class="portfolio-tag">Promo Reel</span>
+            <span class="portfolio-tag">Choreography</span>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb">
+          <iframe src="https://www.tiktok.com/embed/v2/7678468809962900743" style="width:100%;height:100%;border:none;" allowfullscreen scrolling="no"></iframe>
+        </div>
+        <div class="portfolio-info">
+          <h3>Artist Collaboration</h3>
+          <p>Choreography for "Do He Know" by @The Puppeteer — from music selection to final video, every detail created to match the artist's vision.</p>
+          <div class="portfolio-meta">
+            <span class="portfolio-tag">Music Video</span>
+            <span class="portfolio-tag">Collaboration</span>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb">
+          <iframe src="https://www.tiktok.com/embed/v2/7630226635358293266" style="width:100%;height:100%;border:none;" allowfullscreen scrolling="no"></iframe>
+        </div>
+        <div class="portfolio-info">
+          <h3>Afro Dance Choreography</h3>
+          <p>"Spicy" but make it dance — high-energy Afro dance choreography with sharp movements and original styling.</p>
+          <div class="portfolio-meta">
+            <span class="portfolio-tag">Afro Dance</span>
+            <span class="portfolio-tag">Trending</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-frame">
+        <img src="about-photo.jpg" alt="Anna Sophie" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block;" />
+      </div>
+      <div class="about-text">
+        <div class="section-ornament">
+          <div class="ornament-line"></div>
+          <span class="section-tag">The Studio</span>
+          <div class="ornament-line"></div>
+        </div>
+        <h2>Anna Sophie <em>Studio</em></h2>
+        <p>I'm <strong>Anna Sophie</strong>, a professional dancer and choreographer based in Geneva, Switzerland. I create choreographed dance content for musicians, brands, and creators of every genre and every size.</p>
+        <p>For over <strong>9 years</strong>, I have been turning sound into movement. From indie musicians releasing their debut single to established brands launching global campaigns, my work is to find the dance that lives inside the music and bring it to life on screen.</p>
+        <p>Every commission is approached as a collaboration. Your vision, my craft, your audience, mine — together we create content that moves people and grows your reach.</p>
+        <div class="credentials">
+          <div class="credential">
+            <div class="credential-icon">✦</div>
+            <div>9 Years Experience</div>
+          </div>
+          <div class="credential">
+            <div class="credential-icon">✦</div>
+            <div>Based in Geneva, CH</div>
+          </div>
+          <div class="credential">
+            <div class="credential-icon">✦</div>
+            <div>Available Worldwide</div>
+          </div>
+          <div class="credential">
+            <div class="credential-icon">✦</div>
+            <div>All Genres Welcome</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="process">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-ornament">
+        <div class="ornament-line"></div>
+        <span class="section-tag">How It Works</span>
+        <div class="ornament-line"></div>
+      </div>
+      <h2>From your track to <em>the timeline</em></h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <h4>Send Your Track</h4>
+        <p>Email me your song and tell me the vibe you want. Released or unreleased, all genres welcome.</p>
+      </div>
+      <div class="process-step">
+        <h4>Choose Package</h4>
+        <p>Pick the package that fits. We confirm the price, scope, and timeline together.</p>
+      </div>
+      <div class="process-step highlight">
+        <h4>Payment Confirmed</h4>
+        <p>Once payment is confirmed, we lock in the schedule and I begin work on your project immediately.</p>
+      </div>
+      <div class="process-step">
+        <h4>Choreograph and Film</h4>
+        <p>I create a dance concept tailored to your sound, then film and edit the video to perfection.</p>
+      </div>
+      <div class="process-step">
+        <h4>Post and Tag</h4>
+        <p>I post on Instagram and TikTok, tag you, and add you as collaborator. Your audience grows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-cta">
+      <div class="section-ornament" style="margin-bottom: 1.5rem;">
+        <div class="ornament-line"></div>
+        <span class="section-tag">Let's Collaborate</span>
+        <div class="ornament-line"></div>
+      </div>
+      <h2>Ready to get your <em>music moving</em>?</h2>
+      <p>Send me a message with your track and which package you would like. I will reply within 24 hours with next steps and a timeline.</p>
+      <div class="contact-methods">
+        <a href="/cdn-cgi/l/email-protection#05646b6b64766a756d6c6066776072456268646c692b666a68" class="contact-method">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email Me
+        </a>
+        <a href="https://www.instagram.com/annasophiebackup01/" target="_blank" rel="noopener" class="contact-method">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.tiktok.com/@annasophiestudio" target="_blank" rel="noopener" class="contact-method">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.66a8.16 8.16 0 0 0 4.77 1.52V6.69h-1.84z"/></svg>
+          TikTok
+        </a>
+        <a href="https://www.fiverr.com/alina_rose01/create-a-group-tiktok-dance-choreography-video-dance-video-viral-dance" target="_blank" rel="noopener" class="contact-method">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"/></svg>
+          Fiverr
+        </a>
+      </div>
+      <a href="https://www.fiverr.com/alina_rose01/create-a-group-tiktok-dance-choreography-video-dance-video-viral-dance" target="_blank" rel="noopener" class="btn btn-primary">Order on Fiverr →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-ornament">
+        <div class="ornament-line"></div>
+        <span class="section-tag">Frequently Asked Questions</span>
+        <div class="ornament-line"></div>
+      </div>
+      <h2>Common <em>questions</em></h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>What services do you offer?</h3>
+        <p>I create custom dance videos and choreography for musicians, brands, and content creators, designed for TikTok, Instagram Reels, YouTube Shorts, and other social platforms.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I book a dance video?</h3>
+        <p>Send me your song or project details through the website or Fiverr, and I'll discuss your vision, pricing, and delivery timeline before we get started.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does delivery take?</h3>
+        <p>Most projects are delivered within 2–5 days, depending on the choreography, video length, and editing requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <img src="logo.png" alt="Anna Sophie Studio" class="footer-logo" />
+    <div class="social-links">
+      <a href="https://www.instagram.com/annasophiebackup01/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@annasophiestudio" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.66a8.16 8.16 0 0 0 4.77 1.52V6.69h-1.84z"/></svg>
+      </a>
+      <a href="https://web.facebook.com/profile.php?id=61588729981611" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.fiverr.com/alina_rose01/create-a-group-tiktok-dance-choreography-video-dance-video-viral-dance" target="_blank" rel="noopener" class="social-link" aria-label="Fiverr">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"/></svg>
+      </a>
+      <a href="/cdn-cgi/l/email-protection#f5949b9b94869a859d9c9096879082b59298949c99db969a98" class="social-link email-link" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
+    </div>
+    <p class="footer-email">📩 <a href="/cdn-cgi/l/email-protection#d7b6b9b9b6a4b8a7bfbeb2b4a5b2a097b0bab6bebbf9b4b8ba"><span class="__cf_email__" data-cfemail="e0818e8e81938f9088898583928597a0878d81898cce838f8d">[email&#160;protected]</span></a></p>
+    <p style="color: var(--gold-light); font-size: 0.75rem; letter-spacing: 0.2em; margin-top: -0.75rem; margin-bottom: 1.5rem; text-transform: uppercase; opacity: 0.7;">Direct Email Inquiries Welcome</p>
+    <p class="footer-text">Anna Sophie Studio · <span>Dance · Choreography · Promo Content</span></p>
+    <p class="footer-text" style="margin-top: 0.5rem; font-size: 0.7rem;">© 2026 · Geneva, Switzerland · Available Worldwide</p>
+  </footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+<script>
+// ============ LOAD SAVED DATA ON PAGE LOAD ============
+(function() {
+  const saved = localStorage.getItem('annaSophieData');
+  if (!saved) return;
+
+  const data = JSON.parse(saved);
+
+  // Update email links
+  if (data.email) {
+    document.querySelectorAll('a[href*="annasophiecrew@gmail.com"]').forEach(a => {
+      a.href = a.href.replace(/annasophiecrew@gmail\.com/g, data.email);
+      if (a.textContent.includes('@')) a.textContent = a.textContent.replace(/annasophiecrew@gmail\.com/g, data.email);
+    });
+  }
+
+  // Update social links
+  if (data.instagram) {
+    document.querySelectorAll('a[href*="annasophiebackup01"]').forEach(a => a.href = data.instagram);
+  }
+  if (data.tiktok) {
+    document.querySelectorAll('a[href*="@annasophiestudio"]').forEach(a => a.href = data.tiktok);
+  }
+  if (data.facebook) {
+    document.querySelectorAll('a[href*="facebook.com/profile"]').forEach(a => a.href = data.facebook);
+  }
+  if (data.fiverr) {
+    document.querySelectorAll('a[href*="fiverr.com"]').forEach(a => a.href = data.fiverr);
+  }
+
+  // Update portfolio projects
+  if (data.projects && data.projects.length > 0) {
+    const grid = document.querySelector('.portfolio-grid');
+    if (grid) {
+      grid.innerHTML = data.projects.map(p => {
+        let videoHTML = '';
+        if (p.source === 'upload' && p.fileUrl) {
+          videoHTML = `<video src="${p.fileUrl}" controls style="width:100%;height:auto;display:block;background:#000;"></video>`;
+        } else if (p.source === 'url' && p.url) {
+          const igMatch = p.url.match(/instagram\.com\/(?:reel|p)\/([A-Za-z0-9_-]+)/);
+          const ttMatch = p.url.match(/tiktok\.com\/@[\w.-]+\/video\/(\d+)/);
+          const ytMatch = p.url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/);
+          if (igMatch) videoHTML = `<iframe src="https://www.instagram.com/reel/${igMatch[1]}/embed/" style="width:100%;height:100%;border:none;"></iframe>`;
+          else if (ttMatch) videoHTML = `<iframe src="https://www.tiktok.com/embed/v2/${ttMatch[1]}" style="width:100%;height:100%;border:none;"></iframe>`;
+          else if (ytMatch) videoHTML = `<iframe src="https://www.youtube.com/embed/${ytMatch[1]}" style="width:100%;height:100%;border:none;"></iframe>`;
+        }
+        return `<div class="portfolio-card">
+          <div class="portfolio-thumb">${videoHTML || '<div class="portfolio-thumb-icon">▶</div>'}</div>
+          <div class="portfolio-info">
+            <h3>${p.name || 'Untitled Project'}</h3>
+            <p>${p.description || ''}</p>
+            <div class="portfolio-meta">
+              <span class="portfolio-tag">${p.category || 'project'}</span>
+            </div>
+          </div>
+        </div>`;
+      }).join('\n      ');
+    }
+  }
+
+  // Update bio
+  if (data.bio) {
+    const bioParagraphs = document.querySelectorAll('.about-text p');
+    if (bioParagraphs[1]) bioParagraphs[1].textContent = data.bio;
+  }
+
+  // Update years
+  if (data.years) {
+    document.querySelectorAll('.about-text strong').forEach(el => {
+      if (el.textContent.match(/\d+\s*years?/i)) {
+        el.textContent = data.years + ' years';
+      }
+    });
+  }
+})();
+</script>
+</html>
